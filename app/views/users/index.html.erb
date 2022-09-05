@@ -1,0 +1,48 @@
+<table class="table table-bordered" style="margin: 20px;">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Mobile</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+      <tr>
+        <th>
+          <%= user.id %>
+        </th>
+        <td>
+          <%= user.name %>
+        </td>
+        <td>
+          <%= user.email %>
+        </td>
+        <td>
+          <%= user.mobile %>
+        </td>
+        <td>
+        <div class="btn-group" role="group" aria-label="Basic example">
+
+          <a href="/users/<%= user.id %>" style="text-decoration:none;">
+            <input class="btn btn-outline-primary btn-sm" type="button" value="View">
+          </a>
+         
+          <a href="/users/<%= user.id %>/edit" style="text-decoration:none; margin: 0px 10px 0px 10px;">
+            <input class="btn btn-outline-success btn-sm" type="button" value="Edit">
+          </a>  
+
+           <%= button_to 'Delete', user_path(user), class: "btn btn-outline-danger btn-sm", method: :delete %>
+
+        </div>   
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<a href="<%= new_user_path(@user) %>" style="text-decoration:none; margin: 10px 0px 0px 20px;">
+  <input class="btn btn-success btn-sm" type="button" value="Add User">
+</a>
