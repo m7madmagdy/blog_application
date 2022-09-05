@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  
+  root "users#index"
+
   defaults format: :json do
     namespace :api do
-      resources :users
+      resources :users do
+        resources :comments
       end
+    end
   end
-  resources :users
-  root "users#index"
+
+  resources :users do
+    resources :comments
+  end
+
 end

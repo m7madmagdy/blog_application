@@ -1,4 +1,4 @@
-<div align="center" style=" margin: 30px 30px;">
+<div style="float: left; margin: 30px 30px;">
 
   <h1><%= @user.name %></h1>
   <p><%= @user.email %></p>
@@ -11,5 +11,11 @@
   <a href="<%= users_path %>">
     <input class="btn btn-success btn-sm" type="button" value="Back to Home">
   </a>
-
 </div>
+
+<div style="margin: 30px 30px;">
+  <h2>Add a comment:</h2>
+  <%= render 'shared/comment_form' %>
+</div>
+
+
