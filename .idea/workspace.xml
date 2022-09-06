@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e63fb44a-de10-4c6d-beed-69416ed04041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/api/comments_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/comments/_comment.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/comments/index.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/comments/_comment.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/comments/index.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/shared/_comment_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/blog_api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog_api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/api/users/index.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/users/index.json.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/m7mad/Workspace/Ruby Projects/blog_api/app/controllers/api",
+    "last_opened_file_path": "/home/m7mad/Workspace/Ruby Projects/blog_api",
     "nodejs_package_manager_path": "npm",
     "ruby.rails.projectView.checked": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager"
@@ -188,7 +175,8 @@
       <option name="presentableId" value="Default" />
       <updated>1662376497045</updated>
       <workItem from="1662376504587" duration="6531000" />
-      <workItem from="1662387610946" duration="7048000" />
+      <workItem from="1662387610946" duration="8258000" />
+      <workItem from="1662417396555" duration="60000" />
     </task>
     <servers />
   </component>
