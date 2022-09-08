@@ -41,7 +41,7 @@ module Api
 
     def destroy
       @user.destroy
-      redirect_to users_url, notice: "User was successfully destroyed."
+      redirect_to users_url, notice: 'User was successfully destroyed.'
     end
 
     private
@@ -62,5 +62,4 @@ module Api
       REDIS_CLIENT.get CACHE_KEY
     end
   end
-
 end
