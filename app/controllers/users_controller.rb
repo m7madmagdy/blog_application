@@ -15,9 +15,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: "Added new user successfully."
+      redirect_to @user, notice: 'Added new user successfully.'
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to root_path, notice: "Updated successfully."
+      redirect_to root_path, notice: 'Updated successfully.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -33,10 +33,10 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to users_url, alert: "Destroyed successfully."
+    redirect_to users_url, alert: 'Destroyed successfully.'
   end
 
-  private 
+  private
 
   def user_params
     params.require(:user).permit(:name, :email, :mobile)

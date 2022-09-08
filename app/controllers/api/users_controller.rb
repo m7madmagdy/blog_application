@@ -10,7 +10,6 @@ module Api
 
     def index
       @users ||= User.all
-      # render json: @users
     end
 
     def show; end
@@ -59,7 +58,10 @@ module Api
     end
 
     def check_cached
-      REDIS_CLIENT.get CACHE_KEY
+      cached_users = REDIS_CLIENT.get(CACHE_KEY)
+      return unless cached_users
+
+      @users = JSON.parse(cached_users).map { |json| User.new(json) }
     end
   end
 end
