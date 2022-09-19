@@ -29,8 +29,6 @@ gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 
-gem 'redis'
-
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -51,6 +49,11 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'redis-rails'
+  gem 'faker'
 end
 
 group :development do
@@ -69,9 +72,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem 'shoulda-matchers'
-  gem "redis"
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'faker'
 end
