@@ -19,10 +19,9 @@ module Api
     end
 
     def create
-      @user = User.new(user_params)
-
+      @user = User.new user_params
       if @user.save
-        redirect_to @user
+        redirect_to @user, status: :created
       else
         render :new, status: :unprocessable_entity
       end
@@ -39,8 +38,9 @@ module Api
     end
 
     def destroy
-      @user.destroy
-      redirect_to users_url, notice: 'User was successfully destroyed.'
+      if @user.destroy
+        head :no_content, status: :ok
+      end
     end
 
     private
