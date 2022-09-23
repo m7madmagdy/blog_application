@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def random_user
+    GenerateRandomUserJob.perform_later
+    redirect_to root_path
+  end
+
   def show; end
 
   def new
@@ -15,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: 'Added new user successfully.'
+      redirect_to @user, notice: 'Added new user Successfully.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to root_path, notice: 'Updated successfully.'
+      redirect_to root_path, notice: 'Updated Successfully.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -33,13 +38,18 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to root_path, alert: 'Destroyed successfully.'
+    redirect_to root_path, alert: 'Destroyed Successfully.'
+  end
+
+  def destroy_all
+    User.all.destroy_all
+    redirect_to root_path, alert: 'All Users Destroyed Successfully.'
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :mobile)
+    params.require(:user).permit(:name, :email, :url, :mobile)
   end
 
   def set_user

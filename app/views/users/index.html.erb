@@ -47,5 +47,13 @@
 </table>
 
 <a href="<%= new_user_path(@user) %>" style="text-decoration:none; margin: 10px 0px 0px 20px;">
-  <input class="btn btn-success btn-sm" type="button" value="Add User">
+  <input class="btn btn-outline-success btn-sm" type="button" value="Add User">
+</a>
+
+<a href="<%= users_random_user_path %>" style="text-decoration:none; margin: 10px 0px 0px 20px;">
+  <input class="btn btn-outline-dark btn-sm" type="button" value="Random User">
+</a>
+
+<a href="<%= users_destroy_all_path %>" style="text-decoration:none; margin: 10px 0px 0px 20px;">
+  <input class="btn btn-outline-danger btn-sm" type="button" value="Destroy All">
 </a>

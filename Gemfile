@@ -54,6 +54,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'redis-rails'
   gem 'faker'
+  gem 'sidekiq'
 end
 
 group :development do

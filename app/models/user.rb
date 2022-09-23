@@ -5,10 +5,10 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :mobile, presence: true
 
-  after_create :flush_cache
-  CACHE_KEY = 'USERS CACHED'
+  # after_create :flush_cache
+  # CACHE_KEY = 'USERS CACHED'
 
-  def flush_cache
-    REDIS_CLIENT.del CACHE_KEY
-  end
+  # def flush_cache
+  #   REDIS_CLIENT.del CACHE_KEY
+  # end
 end

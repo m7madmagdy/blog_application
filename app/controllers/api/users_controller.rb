@@ -61,7 +61,8 @@ module Api
       cached_users = REDIS_CLIENT.get(CACHE_KEY)
       return unless cached_users
 
-      @users = JSON.parse(cached_users).map { |json| User.new(json) }
+      parced_response = JSON.parse(cached_users)
+      @users = parced_response.map { |user_object| User.new(user_object)  }
     end
   end
 end
