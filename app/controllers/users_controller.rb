@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  http_basic_authenticate_with name: "Mego", password: "secret", only: :destroy
   before_action :set_user, only: %i[show edit update destroy]
 
   def index
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :url, :mobile)
+    params.require(:user).permit(:name, :email, :mobile)
   end
 
   def set_user

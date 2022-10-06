@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:create, :destroy]
+  before_action :set_comment, only: [:edit, :create, :destroy]
 
   def index
     @comments = Comment.all
@@ -9,6 +9,8 @@ class CommentsController < ApplicationController
     @comment = @user.comments.create(comment_params)
     redirect_to root_path
   end
+
+  def edit; end
 
   def destroy
     @comment = @user.comments.find(params[:id])
