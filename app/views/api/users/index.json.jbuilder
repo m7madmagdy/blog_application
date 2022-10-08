@@ -1,5 +1,5 @@
 json.array! @users do |user|
-  json.partial! 'shared/user', user: user
+  json.partial! 'user', user: user
 
   json.comments do
     json.array! user.comments do |comment|

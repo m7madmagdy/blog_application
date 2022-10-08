@@ -15,13 +15,13 @@ class CommentsController < ApplicationController
   def destroy
     @comment = @user.comments.find(params[:id])
     @comment.destroy
-    redirect_to root_path
+    redirect_to root_path, alert: 'Comment Destroyed.'
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:commenter, :body)
+    params.require(:comment).permit(:commenter, :body, :status)
   end
 
   def set_comment

@@ -8,6 +8,10 @@
     <%= form.text_area :body %>
   </p>
   <p>
+    <%= form.label :status %>
+    <%= form.select :status, %w[public private archived], selected: 'public' %>
+  </p>
+  <p>
     <button type="submit" class="btn btn-success" style="margin-top: 20px;">Submit</button>
   </p>
 <% end %>

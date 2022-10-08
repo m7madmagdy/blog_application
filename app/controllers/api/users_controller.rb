@@ -1,15 +1,15 @@
 module Api
   class UsersController < ApplicationController
-    CACHE_KEY = 'USERS CACHED'
+    # CACHE_KEY = 'USERS CACHED'
 
     skip_before_action :verify_authenticity_token
     before_action :set_user, only: %i[show edit update destroy]
 
-    after_action :cache_response, only: [:index]
-    before_action :check_cached, only: [:index]
+    # after_action :cache_response, only: [:index]
+    # before_action :check_cached, only: [:index]
 
     def index
-      @users ||= User.all
+      @users ||= User.all.order('Random()')
     end
 
     def show; end
@@ -46,7 +46,7 @@ module Api
     private
 
     def user_params
-      params.require(:user).permit(:name, :email, :mobile)
+      params.require(:user).permit(:name, :email, :mobile, :status)
     end
 
     def set_user

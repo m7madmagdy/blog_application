@@ -39,18 +39,18 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to root_path, alert: 'Destroyed Successfully.'
+    redirect_to root_path, alert: 'User Destroyed.'
   end
 
   def destroy_all
     User.all.destroy_all
-    redirect_to root_path, alert: 'All Users Destroyed Successfully.'
+    redirect_to root_path, alert: 'All Users Destroyed.'
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :mobile)
+    params.require(:user).permit(:name, :email, :mobile, :status)
   end
 
   def set_user

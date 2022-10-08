@@ -1,10 +1,12 @@
-<p>
-  <strong>Commenter: <%= comment.commenter %> </strong>
-</p>
+<% unless comment.archived? %>
+  <p>
+    <strong>Commenter: <%= comment.commenter %> </strong>
+  </p>
 
-<p>
-  <strong>Comment: <%= comment.body %></strong>
-</p>
-<p>
-  <%= button_to "Destroy Comment", [comment.user, comment], class: "btn btn-outline-danger btn-sm", method: :delete %>
-</p>
+  <p>
+    <strong>Comment: <%= comment.body %></strong>
+  </p>
+  <p>
+    <%= button_to "Destroy Comment", [comment.user, comment], class: "btn btn-outline-danger btn-sm", method: :delete %>
+  </p>
+<% end %>

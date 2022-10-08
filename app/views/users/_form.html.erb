@@ -22,6 +22,11 @@
     <%= form.text_field :mobile %>
   </div>
 
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, %w[public private archived], selected: 'public' %>
+  </div>
+
   <button type="submit" class="btn btn-success" style="margin-top: 20px;">Submit</button>
 
 <% end %>
