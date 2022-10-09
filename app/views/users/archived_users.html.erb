@@ -1,0 +1,39 @@
+<div style="text-decoration:none; margin: 10px;">
+    <strong style="font-family: 'DejaVu Serif',serif;">Our Blog has <%= User.archived_count %> Archived User</strong>
+</div>
+
+<table class="table table-bordered" style="margin: 20px;">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Mobile</th>
+    <th scope="col">Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <% if user.archived? %>
+      <tr>
+        <th><%= user.id %></th>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.mobile %></td>
+        <td><%= user.status %></td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="/users/<%= user.id %>" style="text-decoration:none;">
+              <input class="btn btn-outline-primary btn-sm" type="button" value="View">
+            </a>
+            <a href="/users/<%= user.id %>/edit" style="text-decoration:none; margin: 1px 10px 1px 10px;">
+              <input class="btn btn-outline-success btn-sm" type="button" value="Edit">
+            </a>
+            <%= button_to 'Delete', user_path(user), class: "btn btn-outline-danger btn-sm", method: :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>

@@ -9,10 +9,17 @@ class User < ApplicationRecord
   VALID_STATUSES = %w[public private archived]
   validates :status, inclusion: { in: VALID_STATUSES }
 
+  def public?
+    status == 'public'
+  end
+
+  def private?
+    status == 'private'
+  end
+
   def archived?
     status == 'archived'
   end
-
   # after_create :flush_cache
   # CACHE_KEY = 'USERS CACHED'
 

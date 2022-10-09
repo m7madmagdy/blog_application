@@ -21,6 +21,14 @@ module Visible
     end
   end
 
+  def public?
+    status == 'public'
+  end
+
+  def private?
+    status == 'private'
+  end
+
   def archived?
     status == 'archived'
   end

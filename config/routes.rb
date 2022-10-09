@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   root "users#index"
   get 'users/random_user'
   get 'users/destroy_all'
+  get 'users/public_users'
+  get 'users/private_users'
+  get 'users/archived_users'
 
 
   defaults format: :json do

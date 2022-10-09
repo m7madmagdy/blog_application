@@ -11,6 +11,18 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def public_users
+    @users = User.where(status: 'public')
+  end
+
+  def private_users
+    @users = User.where(status: 'private')
+  end
+
+  def archived_users
+    @users = User.where(status: 'archived')
+  end
+
   def show; end
 
   def new
