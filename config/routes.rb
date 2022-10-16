@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get 'users/private_users'
   get 'users/archived_users'
 
-
   defaults format: :json do
     namespace :api do
       resources :users do

@@ -10,8 +10,9 @@ class GenerateRandomUserJob < ApplicationJob
     user.save!
     sleep 8
   end
+
   def random_status
-    %w[public private archived].sample
+    User::VALID_STATUSES.sample
   end
 
 end
