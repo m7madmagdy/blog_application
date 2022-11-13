@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: 'Added new user Successfully.'
+      redirect_to root_path, notice: 'Added new user Successfully.'
     else
       render :new, status: :unprocessable_entity
     end
