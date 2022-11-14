@@ -11,16 +11,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_08_201314) do
-  create_table "articles", force: :cascade do |t|
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
@@ -30,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_08_201314) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "mobile"
+    t.text "mobile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
