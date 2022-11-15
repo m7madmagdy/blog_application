@@ -4,7 +4,6 @@
 <img src="https://m7madmagdy.github.io/pages/eRails.png" width="400" align="left"/>
 <img src="https://m7madmagdy.github.io/pages/nRails.png" width="400" align="left"/>
 <img src="https://m7madmagdy.github.io/pages/blogApi.png" width="400" align="left"/>
-```
 
 # Blog Website
 
