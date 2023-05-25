@@ -1,12 +1,12 @@
 module Api
   class UsersController < ApplicationController
-    # CACHE_KEY = 'USERS CACHED'
-
     skip_before_action :verify_authenticity_token
     before_action :set_user, only: %i[show edit update destroy]
 
-    # after_action :cache_response, only: [:index]
-    # before_action :check_cached, only: [:index]
+    CACHE_KEY = 'users#cached'
+
+    after_action :cache_response, only: [:index]
+    before_action :check_cached, only: [:index]
 
     def index
       @users ||= User.all.order('Random()')

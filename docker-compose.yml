@@ -13,6 +13,23 @@ services:
     volumes:
       - postgres:/var/lib/postgresql
 
+  sidekiq:
+    image: blogapp-backend
+    command: 'bundle exec sidekiq'
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+      - backend
+    env_file:
+      - environment.env
+    restart: always
+
+  redis:
+    image: redis:6.0
+    restart: always
+
   backend:
     image: blogapp-backend
     build: .
@@ -23,6 +40,7 @@ services:
       - .:/app
     depends_on:
       - db
+      - redis
     env_file:
       - environment.env
     restart: always

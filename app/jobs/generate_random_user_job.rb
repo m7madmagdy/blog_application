@@ -1,5 +1,5 @@
 class GenerateRandomUserJob < ApplicationJob
-  queue_as :default
+  sidekiq_options queue: :default
 
   def perform
     user = User.new

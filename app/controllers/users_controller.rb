@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  http_basic_authenticate_with name: "Mego", password: "secret", only: :destroy
+  http_basic_authenticate_with name: "Mego", password: "secret", only: %i[destroy destroy_all]
   before_action :set_user, only: %i[show edit update destroy]
 
   def index
