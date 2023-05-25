@@ -13,6 +13,10 @@ services:
     volumes:
       - postgres:/var/lib/postgresql
 
+  redis:
+    image: redis:6.0
+    restart: always
+
   backend:
     image: blogapp-backend
     build: .
@@ -23,6 +27,7 @@ services:
       - .:/app
     depends_on:
       - db
+      - redis
     env_file:
       - environment.env
     restart: always
