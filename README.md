@@ -1,11 +1,4 @@
-# CRUD Operation Rails Application
-
-<img src="https://m7madmagdy.github.io/server/rails%20apps/blogUsersApp.png" width="400" align="left"/>
-<img src="https://m7madmagdy.github.io/server/rails%20apps/eRails.png" width="400" align="left"/>
-<img src="https://m7madmagdy.github.io/server/rails%20apps/nRails.png" width="400" align="left"/>
-<img src="https://m7madmagdy.github.io/server/rails%20apps/blogApi.png" width="400" align="left"/>
-
-# Blog Website
+# My First Rails Application
 
 **Dependencies**
 
